@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DeselializationBinary.cs" />
+    <Compile Include="DeserializationXML.cs" />
     <Compile Include="Menu.cs" />
     <Compile Include="SerializationBinary.cs" />
     <Compile Include="SerializationXML.cs" />

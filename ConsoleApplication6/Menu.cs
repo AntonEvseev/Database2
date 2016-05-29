@@ -17,28 +17,19 @@ namespace Database
                 line = sr.ReadLine();
             }
             List<Person> employees = new List<Person>();
-            XmlSerializer xs = new XmlSerializer(typeof(List<Person>));
-            BinaryFormatter bf = new BinaryFormatter();
+
             if (line == "xml")
             {
                 if (File.Exists("person.xml"))
                 {
-                    using (FileStream fs = new FileStream("person.xml", FileMode.OpenOrCreate))
-                    {
-                        List<Person> newEmployees = (List<Person>)xs.Deserialize(fs);
-                        employees = newEmployees;
-                    }
+                    employees = (List<Person>)DeserializationXML.D();
                 }
             }
             if (line == "bin")
             {
                 if (File.Exists("person.dat"))
                 {
-                    using (FileStream fs = new FileStream("person.dat", FileMode.OpenOrCreate))
-                    {
-                        List<Person> newEmployees = (List<Person>)bf.Deserialize(fs);
-                        employees = newEmployees;
-                    }
+                    employees = (List<Person>)DeserializationBinary.ReadBinary();
                 }
             }
             if (line == "bin" || line == "xml")
