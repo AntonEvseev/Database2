@@ -12,7 +12,7 @@ namespace Database
         public void Show()
         {
             string line = "";
-            using (StreamReader sr = new StreamReader("option.ini.txt", System.Text.Encoding.Default))
+            using (StreamReader sr = new StreamReader("option.ini", System.Text.Encoding.Default))
             {
                 line = sr.ReadLine();
             }
